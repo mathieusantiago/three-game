@@ -8,6 +8,7 @@ import { Hero } from "../Models/Hero/Car";
 import { Building } from "../Models/City/Building/Building";
 import { BuildingGroup } from "../Models/City/BuildingGroup";
 import { Ground } from "../Models/City/Ground";
+import { Tree } from "../Models/City/Tree/Tree";
 
 export function Scene() {
   const [thirdPerson, setThirdPerson] = useState(false);
@@ -26,6 +27,24 @@ export function Scene() {
     return () => window.removeEventListener("keydown", keydownHandler);
   }, [thirdPerson]);
 
+  const TreePositions = Array.from({ length: 19 }, (_, index) => {
+    const x = -110 + index * 12;
+    return [106, 0, x];
+  });
+  const TreePositions2 = Array.from({ length: 19 }, (_, index) => {
+    const x = -110 + index * 12;
+    return [-110, 0, x];
+  });
+  const TreePositions3 = Array.from({ length: 19 }, (_, index) => {
+    const x = -110 + index * 12;
+    return [x, 0, -110];
+  });
+
+  const TreePositions4 = Array.from({ length: 19 }, (_, index) => {
+    const x = -110 + index * 12;
+    return [x, 0, 106];
+  });
+
   return (
     <Suspense fallback={null}>
       <Environment
@@ -39,6 +58,10 @@ export function Scene() {
       )}
       <Hero thirdPerson={thirdPerson} cameraRef={cameraRef}/>
       <BuildingGroup />
+      <Tree positions={TreePositions} rotation={Math.random()}/>
+      <Tree positions={TreePositions2} rotation={Math.random()}/>
+      <Tree positions={TreePositions3} rotation={Math.random()}/>
+      <Tree positions={TreePositions4} rotation={Math.random()}/>
       <Ground />
     </Suspense>
   );
