@@ -1,12 +1,9 @@
-import { useBox} from "@react-three/cannon";
-import { useFrame, useLoader } from "@react-three/fiber";
+import { useLoader } from "@react-three/fiber";
 import { useRef } from "react";
-import { Quaternion, Vector3 } from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import { useControls } from "../../../AnimationController/useControls";
-import  buildingGlb  from "../../../assets/Building.glb";
+import  buildingGlb  from "../../../assets/House.glb";
 
-export function Building({ thirdPerson }) {
+export const Building = ({ thirdPerson }) => {
   let result = useLoader(
     GLTFLoader,
     buildingGlb
@@ -14,7 +11,7 @@ export function Building({ thirdPerson }) {
   const buil1dref = useRef();
   return (
     <group ref={buil1dref} name="Building1">
-      <primitive object={result.scene} rotation-y={25.11} position={[-50, 0, -50]}/>
+      <primitive object={result.scene} rotation-y={25.11} scale={8} position={[-50, 0, -50]}/>
     </group>
   );
 }

@@ -85,7 +85,6 @@ export const useControls = (hero) => {
     return sub(
       (state) => {
         if (!state.forward && !state.backward && !state.leftward && !state.rightward) {
-          console.log("no click")
           return true
         }
        },

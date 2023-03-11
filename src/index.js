@@ -15,9 +15,7 @@ const mapping =
 
 createRoot(document.getElementById("root")).render(
   <>
-    <KeyboardControls
-      map={mapping}
-    >
+    <KeyboardControls map={mapping}>
       <Canvas>
         <Physics broadphase="SAP" gravity={[0, -2.6, 0]}>
           <Scene />

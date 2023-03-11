@@ -1,12 +1,9 @@
-import { useBox} from "@react-three/cannon";
-import { useFrame, useLoader } from "@react-three/fiber";
+import { useLoader } from "@react-three/fiber";
 import { useRef } from "react";
-import { Quaternion, Vector3 } from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import { useControls } from "../../../AnimationController/useControls";
 import  buildingGlb  from "../../../assets/Building2.glb";
 
-export function Building2({ thirdPerson }) {
+export const Building2 = ({ thirdPerson }) => {
   let result = useLoader(
     GLTFLoader,
     buildingGlb

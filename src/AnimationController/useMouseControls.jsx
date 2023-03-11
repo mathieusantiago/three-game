@@ -1,12 +1,10 @@
 import { useEffect, useRef } from "react";
 
-export function useMouseControls(camera) {
+export const useMouseControls = (camera) => {
   const canvasRef = useRef();
 
   useEffect(() => {
-    const canvas = canvasRef.current;
-
-    function handleMouseMove(event) {
+    const handleMouseMove = (event) => {
       const { movementX, movementY } = event;
 
       const rotationSpeed = 0.002;

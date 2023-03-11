@@ -1,12 +1,11 @@
 import { usePlane } from "@react-three/cannon";
-import { MeshReflectorMaterial } from "@react-three/drei";
 import { useLoader } from "@react-three/fiber";
 import { useEffect, useRef } from "react";
 import { BufferAttribute } from "three";
 import { TextureLoader } from "three/src/loaders/TextureLoader";
 
-export function Ground() {
-  const [ref] = usePlane(
+export const Ground = () => {
+  usePlane(
     () => ({ 
       type: 'Static', 
       rotation: [-Math.PI / 2, 0, 0] }
@@ -34,7 +33,7 @@ export function Ground() {
         position={[-2.285, -0.01, -1.325]}
         rotation-x={-Math.PI * 0.5}
       >
-        <planeGeometry args={[220, 220]} />
+        <planeGeometry args={[480, 480]} />
         <meshBasicMaterial
           opacity={1}
           transparent={false}
@@ -42,6 +41,6 @@ export function Ground() {
           map={useLoader(TextureLoader, process.env.PUBLIC_URL + "/textures/grain.jpg")}
         />
       </mesh>
-    </>
-  );
+    </>  
+  ); 
 }

@@ -4,11 +4,11 @@ import { useRef } from "react";
 import { Quaternion, Vector3 } from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { useControls } from "../../AnimationController/useControls";
-import test from "../../assets/Soldier.glb";
+import test from "../../assets/Hero.glb";
 
-export function Hero({ thirdPerson }) {
+export const Hero = ({ thirdPerson }) => {
   
-  const [ref, bbox] = useBox(() => ({
+  useBox(() => ({
     type: "Static",
     args: [10, 20, 10],
     position: [-50, 10, 10],
@@ -58,7 +58,7 @@ export function Hero({ thirdPerson }) {
       );
 
     wDir.add(new Vector3(10, 0.2, 10));
-    console.log("result", cameraPosition);
+    // console.log("result", cameraPosition);
 
     state.camera.position.copy(cameraPosition);
     state.camera.lookAt(result.scene.position);
