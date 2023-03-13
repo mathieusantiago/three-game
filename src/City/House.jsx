@@ -19,7 +19,7 @@ const Obstacle = ({ position, rotation }) => {
           ref={housedref}
           object={glt.scene}
           scale={8}
-          rotation-y={25.11}
+          rotation-y={-9.40}
           position={position}
         >
           <meshStandardMaterial attach="material" />
