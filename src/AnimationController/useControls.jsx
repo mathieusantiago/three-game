@@ -1,20 +1,24 @@
 import { useAnimations, useKeyboardControls } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useEffect, useState } from "react";
+import { Box3 } from "three";
 
-export const useControls = (hero) => {
-  let [controls, setControls] = useState({ });
+export const useControls = (hero, chassisApi) => {
+  let [controls, setControls] = useState({});
   const [forward, setForward] = useState(false);
   const [backward, setBackward] = useState(false);
   const [leftward, setLeftward] = useState(false);
   const [rightward, setRightward] = useState(false);
   const animations = useAnimations(hero.animations, hero.scene);
-  const [sub, get] = useKeyboardControls()
-  
+  const [sub, get] = useKeyboardControls();
+
+  // Initialize the collision box
+  const collisionBox = new Box3().setFromObject(hero.scene);
+
   useEffect(() => {
     return sub(
       (state) => {
-       return state.forward
+        return state.forward;
       },
       (pressed) => {
         if (pressed) {
@@ -27,8 +31,8 @@ export const useControls = (hero) => {
           setForward(false);
         }
       }
-    )
-  }, [animations.actions, sub, get])
+    );
+  }, [animations.actions, sub, get]);
 
   useEffect(() => {
     return sub(
@@ -44,8 +48,8 @@ export const useControls = (hero) => {
           setBackward(false);
         }
       }
-    )
-  }, [animations.actions, sub, get])
+    );
+  }, [animations.actions, sub, get]);
 
   useEffect(() => {
     return sub(
@@ -61,9 +65,8 @@ export const useControls = (hero) => {
           setLeftward(false);
         }
       }
-    )
-  }, [animations.actions, sub, get])
-
+    );
+  }, [animations.actions, sub, get]);
   useEffect(() => {
     return sub(
       (state) => state.rightward,
@@ -78,16 +81,21 @@ export const useControls = (hero) => {
           setRightward(false);
         }
       }
-    )
-  }, [animations.actions, sub, get])
+    );
+  }, [animations.actions, sub, get]);
 
   useEffect(() => {
     return sub(
       (state) => {
-        if (!state.forward && !state.backward && !state.leftward && !state.rightward) {
-          return true
+        if (
+          !state.forward &&
+          !state.backward &&
+          !state.leftward &&
+          !state.rightward
+        ) {
+          return true;
         }
-       },
+      },
       (pressed) => {
         if (pressed) {
           const action = animations.actions["CharacterArmature|Idle"];
@@ -97,8 +105,8 @@ export const useControls = (hero) => {
           action.reset().fadeOut(0.5).play();
         }
       }
-    )
-  }, [animations.actions, sub, get])
+    );
+  }, [animations.actions, sub, get]);
 
   useFrame((state, delta) => {
     const speed = 6;
@@ -115,7 +123,9 @@ export const useControls = (hero) => {
     if (rightward) {
       hero.scene.position.x += distance;
     }
+    // Mise à jour de la position de la boîte de collision du héros
+    // chassisApi.box.position.copy(hero.scene.position);
   });
-  
+
   return controls;
-}
+};

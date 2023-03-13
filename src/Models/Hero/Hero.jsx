@@ -1,6 +1,6 @@
-import { useBox } from "@react-three/cannon";
+import { useBox, useCompoundBody } from "@react-three/cannon";
 import { useFrame, useLoader } from "@react-three/fiber";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Quaternion, Vector3 } from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { useControls } from "../../AnimationController/useControls";
@@ -8,22 +8,14 @@ import test from "../../assets/Hero.glb";
 
 export const Hero = ({ thirdPerson }) => {
   
-  useBox(() => ({
-    type: "Static",
-    args: [10, 20, 10],
-    position: [-50, 10, 10],
-  }));
-
   let result = useLoader(GLTFLoader, test);
 
   const chassisBodyRef = useRef();
-  const position = [-0.5, 0.5, 0];
-  const width = 0.15;
-  const height = 0.07;
-  const front = 0.15;
-  const chassisBodyArgs = [width, height, front * 2];
+  const position = [0,1,0];
+  const chassisBodyArgs =  [0.5, 2, 0.5];
   const [chassisBody] = useBox(
     () => ({
+      type: "Dynamic",
       allowSleep: false,
       args: chassisBodyArgs,
       mass: 15,
@@ -63,10 +55,16 @@ export const Hero = ({ thirdPerson }) => {
     state.camera.position.copy(cameraPosition);
     state.camera.lookAt(result.scene.position);
   });
-
+  
   return (
-    <group name="vehicle">
-      <primitive object={result.scene} rotation-y={Math.PI} position={0} />
+    <group name="HeroGroup">
+      <group ref={chassisBody} name="Hero">
+        <primitive object={result.scene} rotation-y={Math.PI} position={0} />
+      </group>
+      <mesh ref={chassisBody}>
+        <boxGeometry  args={chassisBodyArgs}/>
+        <meshBasicMaterial transparent={true} opacity={1} wireframe/>
+      </mesh>
     </group>
   );
 }
