@@ -63,21 +63,21 @@ export default function PlayerCollider(props) {
       inputVelocity.set(0, 0, 0)
       if (keyboard['KeyW']) {
         setUseAnim("CharacterArmature|Run")
-        inputVelocity.z = -10 * delta
+        inputVelocity.z = -25 * delta
       }else{
         setUseAnim(false)
       }
       if (keyboard['KeyS']) {
         setUseAnim("CharacterArmature|Run")
-        inputVelocity.z = 10 * delta
+        inputVelocity.z = 25 * delta
       }
       if (keyboard['KeyA']) {
         setUseAnim("CharacterArmature|Run")
-        inputVelocity.x = -10 * delta
+        inputVelocity.x = -25 * delta
       }
       if (keyboard['KeyD']) {
         setUseAnim("CharacterArmature|Run")
-        inputVelocity.x = 10 * delta
+        inputVelocity.x = 25 * delta
       } 
 
       euler.y = pivot.rotation.y

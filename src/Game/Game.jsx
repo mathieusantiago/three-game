@@ -7,9 +7,11 @@ import { House } from '../City/House'
 import { Mountain } from '../City/Mountain'
 import { Tree } from '../City/Tree'
 import { Grass } from '../Floor/Grass'
+import { Dirt } from '../City/Dirt'
+import { Farm } from '../City/Farm'
 
 function ToggleDebug({ children }) {
-  const debugRendererVisible = useControls('Debug Renderer', { visible: true })
+  const debugRendererVisible = useControls('Debug Renderer', { visible: false })
 
   return <>{debugRendererVisible.visible ? <Debug>{children}</Debug> : <>{children}</>}</>
 }
@@ -60,6 +62,14 @@ export default function Game() {
     const x = -150 + index * 92;
     return [x, 0, -220];
   });
+  const DirtYPositions1 = Array.from({ length: 6 }, (_, index) => {
+    const x = -68 + index * 2.0;
+    return [x, -0.09, -35];
+  });
+  const DirtXPositions1 = Array.from({ length: 6 }, (_, index) => {
+    const x = -45 + index * 2.0;
+    return [-70, -0.09, x];
+  });
 
   for (let i = 0; i < squareSize; i++) {
     for (let j = 0; j < squareSize; j++) {
@@ -72,7 +82,7 @@ export default function Game() {
   return (
     <>
       <ToggleDebug>
-        <Floor rotation={[-Math.PI / 2, 0, 0]} material={'ground'} />
+        <Farm position={[-71, -0.09, -65]}/>
         <House positions={HousePosition} rotation={Math.random()}/>
         <Mountain positions={MountainPositions1} rotation={Math.random()} scale={Math.random() * (50 - 28 + 1) + 28}/>
         <Mountain positions={MountainPositions2} rotation={Math.random()} scale={Math.random() * (50 - 28 + 1) + 28}/>      <Mountain positions={MountainPositions1} rotation={Math.random()} scale={Math.random() * (50 - 28 + 1) + 28}/>
@@ -82,8 +92,11 @@ export default function Game() {
         <Tree positions={TreePositions2} rotation={Math.random()}/>
         <Tree positions={TreePositions3} rotation={Math.random()}/>
         <Tree positions={TreePositions4} rotation={Math.random()}/>
-        <Grass positions={GrassPosition} rotation={Math.random()} />
+        <Dirt positions={DirtXPositions1}/>
+        <Dirt positions={DirtYPositions1}/>
         <Player position={[0, 1, 0]} linearDamping={0.95} material={'slippery'} />
+        <Grass positions={GrassPosition} rotation={Math.random()} />
+        <Floor rotation={[-Math.PI / 2, 0, 0]} material={'ground'} />
       </ToggleDebug>
     </>
   )

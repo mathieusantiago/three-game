@@ -9,6 +9,7 @@ const Obstacle = ({ position, rotation }) => {
   const glt = useGLTF("./models/House.glb");
   const housedref = useRef();
   const args = [9, 10, 8];
+
   const [ref] = useBox(
     () => ({ args, mass: 150, position: [a, b+6, c]}),
     useRef()
@@ -43,4 +44,3 @@ export function House({ positions, rotation }) {
   );
 }
 
-//[-110, 0, -50]

@@ -6,6 +6,7 @@ import { useRef } from "react";
 export const Tree = ({ positions, rotation }) => {
   const glt = useGLTF('./models/Trees.glb')
   const buil1dref = useRef();
+
   return (
     <>
     {positions.map((position, index) => {
@@ -23,7 +24,6 @@ export const Tree = ({ positions, rotation }) => {
       );
     })}
   </>
-
   );
 }
 //[-110, 0, -50]
