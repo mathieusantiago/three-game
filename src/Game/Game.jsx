@@ -9,6 +9,7 @@ import { Tree } from '../City/Tree'
 import { Grass } from '../Floor/Grass'
 import { Dirt } from '../City/Dirt'
 import { Farm } from '../City/Farm'
+import { Track } from '../Sound/AmbientSound'
 
 function ToggleDebug({ children }) {
   const debugRendererVisible = useControls('Debug Renderer', { visible: false })
@@ -97,6 +98,7 @@ export default function Game() {
         <Player position={[0, 1, 0]} linearDamping={0.95} material={'slippery'} />
         <Grass positions={GrassPosition} rotation={Math.random()} />
         <Floor rotation={[-Math.PI / 2, 0, 0]} material={'ground'} />
+        <Track position-z={0} url="/sounds/theBirdsForest.mp3" />
       </ToggleDebug>
     </>
   )
