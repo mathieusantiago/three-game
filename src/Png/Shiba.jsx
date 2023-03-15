@@ -47,7 +47,7 @@ const Shiba = () => {
       useRef()
     )
     useFrame((_, delta) => {
-      api.position.set(-64, 0.3, axeY + delta);
+      api.position.set(-64, 0.3, axeY + delta / 2);
       if (startForward){
         setAxeY(axeY + delta / 2)
       }

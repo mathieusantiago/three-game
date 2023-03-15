@@ -2,7 +2,7 @@ import { Canvas } from '@react-three/fiber'
 import { Stats, useProgress, Html, Environment, OrbitControls } from '@react-three/drei'
 import Game from './Game/Game'
 import { Physics } from '@react-three/cannon'
-import { Suspense } from 'react'
+import { Suspense, useState } from 'react'
 import { Grass } from './Floor/Grass'
 import { Tree } from "./City/Tree";
 import { Mountain } from "./City/Mountain";
@@ -24,7 +24,7 @@ export default function App() {
           <spotLight position={[80, 5, 150]} angle={Math.PI / 3} penumbra={1} castShadow shadow-mapSize-height={2048} shadow-mapSize-width={2048} />
           <spotLight position={[-80, 5, 150]} angle={Math.PI / 3} penumbra={1} castShadow shadow-mapSize-height={2048} shadow-mapSize-width={2048} />
           <Physics>
-            <Game />
+            <Game/>
           </Physics>
           <Stats />
         </Suspense>

@@ -14,6 +14,11 @@ import { Crops } from '../City/Crops'
 import { Fence } from '../City/Fence'
 import Shiba from '../Png/Shiba'
 import TownCenterSimpleRoc from '../City/TownCenterSimpleRoc'
+import Farmer from '../Png/Farmer'
+import { useEffect, useState } from 'react'
+import { Html } from '@react-three/drei'
+import { Image } from 'react-bootstrap'
+import WoodenSign from '../City/WoodenSign'
 
 function ToggleDebug({ children }) {
   const debugRendererVisible = useControls('Debug Renderer', { visible: false })
@@ -22,6 +27,8 @@ function ToggleDebug({ children }) {
 }
 
 export default function Game() {
+  const [Dialog, setDialog] = useState(<div></div>)
+
   useContactMaterial('ground', 'slippery', {
     friction: 0,
     restitution: 0.3,
@@ -111,7 +118,12 @@ export default function Game() {
   return (
     <>
       <ToggleDebug>
-        <Shiba/> 
+        <Html>
+          {Dialog}
+        </Html>
+        <WoodenSign positions={[[-66,0,-45]]} rotation={0}/>
+        <Shiba setDialog={setDialog}/>
+        <Farmer setDialog={setDialog}/>
         <Fence positions={FencePositions1} rotation={-20.40} args={[0.4, 1, 5.6]}/>
         <Fence positions={FencePositions2}rotation={0} args={[5.6, 1, 0.4]}/>
         <Fence positions={FencePositions3}rotation={-20.40} args={[0.4, 1, 5.6]}/>

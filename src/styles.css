@@ -7,6 +7,7 @@ body,
   font-family: monospace;
   color: white;
 }
+
 #instructions {
   position: absolute;
   left: 50%;
@@ -14,6 +15,34 @@ body,
   margin-left: -200px;
   filter: drop-shadow(1px 1px 1px #000000);
 }
+
 #instructions a {
   color: white;
+}
+
+.dalogHtml{
+  position: relative;
+  background-color: rgba(0, 0, 255, 0.334);
+  color: #000000;
+  width: 800px;
+}
+
+.imageDialog{
+  width: 800px !important;
+  position: absolute;
+  top: 70%;
+  left: -400px;
+}
+
+.dialog{
+  padding:5px;
+  position: absolute;
+  width: 484px;
+  height: 110px;
+  top: 95px;
+  right: 565px;
+  font-weight: bold;
+  font-size: 25px;
+  background-color: #2c2c2c3c;
+  border-radius: 7px;
 }
