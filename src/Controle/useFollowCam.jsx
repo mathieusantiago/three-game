@@ -39,11 +39,9 @@ export default function useFollowCam() {
     followCam.add(camera)
     pivot.add(followCam)
     scene.add(pivot)
-    //console.log('attach followCam listeners')
     document.addEventListener('mousemove', onDocumentMouseMove)
     document.addEventListener('mousewheel', onDocumentMouseWheel)
     return () => {
-      //console.log('remove followCam listeners')
       document.removeEventListener('mousemove', onDocumentMouseMove)
       document.removeEventListener('mousewheel', onDocumentMouseWheel)
     }

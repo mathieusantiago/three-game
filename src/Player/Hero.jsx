@@ -1,7 +1,6 @@
 import { useRef } from 'react'
 import { useAnimations, useGLTF } from '@react-three/drei'
 import { useEffect } from 'react'
-import { LoopOnce } from 'three'
 
 export default function Hero({ mixer, actions, useAnim }) {
   const ref = useRef()

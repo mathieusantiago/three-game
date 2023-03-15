@@ -1,7 +1,6 @@
 import { useBox } from "@react-three/cannon";
 import { Clone, useGLTF } from "@react-three/drei";
 import { useRef } from "react";
-import * as THREE from "three";
 import { CanvasTexture } from "three";
 
 const WoodenSign = ({ positions, rotation }) => {
@@ -12,11 +11,11 @@ const WoodenSign = ({ positions, rotation }) => {
   const textContext = textCanvas.getContext("2d");
   textCanvas.width = 266;
   textCanvas.height = 128;
-	console.log("testests",textContext)
   textContext.font = "bold 20px Arial";
   textContext.fillStyle = "black";
-  textContext.fillText("Maison du", 10, 50);
-  textContext.fillText("Fermier", 25, 80);
+  textContext.fillText("Maison de", 10, 40);
+  textContext.fillText("François", 20, 70);
+  textContext.fillText("le Fermier", 15, 100);
   const textTexture = new CanvasTexture(textCanvas);
 
   return (

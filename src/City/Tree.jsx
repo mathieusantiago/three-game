@@ -26,4 +26,3 @@ export const Tree = ({ positions, rotation }) => {
   </>
   );
 }
-//[-110, 0, -50]

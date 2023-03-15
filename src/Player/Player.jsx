@@ -6,11 +6,9 @@ import useKeyboard from '../Controle/useKeyboard'
 import { useFrame } from '@react-three/fiber'
 import { Vec3 } from 'cannon-es'
 import useFollowCam from '../Controle/useFollowCam'
-import { useAnimations } from '@react-three/drei'
 
 export default function PlayerCollider(props) {
   const { pivot } = useFollowCam()
-  const canJump = useRef(false)
   const group = useRef()
   const velocity = useMemo(() => new Vector3(), [])
   const inputVelocity = useMemo(() => new Vector3(), [])
@@ -19,7 +17,6 @@ export default function PlayerCollider(props) {
   const targetQuaternion = useMemo(() => new Quaternion(), [])
   const worldPosition = useMemo(() => new Vector3(), [])
   const contactNormal = useMemo(() => new Vec3(0, 0, 0), [])
-  const upAxis = useMemo(() => new Vec3(0, -1, 0), [])
   const [useAnim, setUseAnim] = useState(false)
   const mixer = useMemo(() => new AnimationMixer(), [])
   const actions = {}
@@ -33,11 +30,7 @@ export default function PlayerCollider(props) {
         { args: [0.5], position: [0, 1.5, 0], type: 'Sphere' }
       ],
       onCollide: (e) => {
-        if (e.contact.bi.id === e.body.id) {
-          e.contact.ni.negate(contactNormal)
-        } else {
-          contactNormal.set(...e.contact.ni)
-        }
+        
       },
       ...props
     }),

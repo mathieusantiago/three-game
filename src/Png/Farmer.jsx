@@ -9,12 +9,9 @@ const Farmer = ({setDialog}) => {
     const ref = useRef()
     const glt = useGLTF('./models/Farmer.glb')
     const animations = useAnimations(glt.animations, glt.scene);
-    const [axeY, setAxeY] = useState(-69)
-    const [startForward, setStartForward] = useState(true)
     const [collide, setCollide] = useState(false)
     const [startSound, setStartSound] = useState(false)
     
-    console.log(glt)
     useEffect(() => {
       const action1 = animations.actions["CharacterArmature|Idle"];
       const action2 = animations.actions["CharacterArmature|Interact"];
@@ -30,7 +27,7 @@ const Farmer = ({setDialog}) => {
             <div className="dalogHtml">
               <img src="/img/dialogWood.png" className="imageDialog" />
               <div className="dialog">
-                <UseTypeWriter text="Bonjour, je suis le fermier de la ville du Boisclair, je suis là pour vous aider." />
+                <UseTypeWriter text="Bonjour, je suis François le fermier de la ville du Boisclair, je suis là pour vous aider." />
               </div>
             </div>
           )

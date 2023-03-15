@@ -1,4 +1,3 @@
-import { useBox } from "@react-three/cannon";
 import { Clone, useGLTF } from "@react-three/drei";
 import { useRef } from "react";
 
@@ -15,4 +14,3 @@ export const Dirt = ({ positions, rotation }) => {
     </>
   );
 };
-//[-70, 0, -50]

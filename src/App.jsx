@@ -1,12 +1,8 @@
 import { Canvas } from '@react-three/fiber'
-import { Stats, useProgress, Html, Environment, OrbitControls } from '@react-three/drei'
+import { Stats, useProgress, Html, Environment } from '@react-three/drei'
 import Game from './Game/Game'
 import { Physics } from '@react-three/cannon'
-import { Suspense, useState } from 'react'
-import { Grass } from './Floor/Grass'
-import { Tree } from "./City/Tree";
-import { Mountain } from "./City/Mountain";
-import { House } from './City/House'
+import { Suspense } from 'react'
 function Loader() {
   const { progress } = useProgress()
   return <Html center>{progress} % loaded</Html>

@@ -28,7 +28,6 @@ const Shiba = () => {
           setTimeout(loopActions, actionDuration);
         }, actionDuration);
         counter++;
-        console.log(counter)
         if(counter === 4){
           setAxeY(-69)
           counter = 0

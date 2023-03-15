@@ -3,7 +3,6 @@ import { Clone, useGLTF } from "@react-three/drei";
 import { useRef } from "react";
 
 export const Fence = ({ positions, rotation, args }) => {
-  console.log(positions);
   const glt = useGLTF("./models/Fence.glb");
   const fenceRef = useRef();
   return ( 
