@@ -19,7 +19,7 @@ async function createAudio(url) {
     
     analyser.fftSize = 64
     source.connect(analyser)
-    gain.gain.value = 0.009
+    gain.gain.value = 0.019
     analyser.connect(gain)
     
     const data = new Uint8Array(analyser.frequencyBinCount)

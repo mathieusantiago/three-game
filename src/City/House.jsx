@@ -11,7 +11,7 @@ const Obstacle = ({ position, rotation }) => {
   const args = [9, 10, 8];
 
   const [ref] = useBox(
-    () => ({ args, mass: 150, position: [a, b+6, c]}),
+    () => ({ args, mass: 15000, position: [a, b+6, c]}),
     useRef()
   );
   return (

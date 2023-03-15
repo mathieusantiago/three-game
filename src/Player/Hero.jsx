@@ -10,7 +10,6 @@ export default function Hero({ mixer, actions, useAnim }) {
 
   
   useEffect(() => {
-      console.log('actions',useAnim)
       if (useAnim === false) {
         const action = animations.actions["CharacterArmature|Idle"];
         action.reset().fadeIn(0.5).play();

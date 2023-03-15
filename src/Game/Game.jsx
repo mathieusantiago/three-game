@@ -10,6 +10,10 @@ import { Grass } from '../Floor/Grass'
 import { Dirt } from '../City/Dirt'
 import { Farm } from '../City/Farm'
 import { Track } from '../Sound/AmbientSound'
+import { Crops } from '../City/Crops'
+import { Fence } from '../City/Fence'
+import Shiba from '../Png/Shiba'
+import TownCenterSimpleRoc from '../City/TownCenterSimpleRoc'
 
 function ToggleDebug({ children }) {
   const debugRendererVisible = useControls('Debug Renderer', { visible: false })
@@ -71,7 +75,31 @@ export default function Game() {
     const x = -45 + index * 2.0;
     return [-70, -0.09, x];
   });
-
+  const CropsPositions1 = Array.from({ length: 1 }, (_, index) => {
+    const x = -61.3 + index * 2.0;
+    return [-70, -0.09, x];
+  });
+  const FencePositions1 = Array.from({ length: 1 }, (_, index) => {
+    const x = -74.81 + index * 2.0;
+    return [x, -0.01, -59.8];
+  });
+  const FencePositions2 = Array.from({ length: 1 }, (_, index) => {
+    const x = -65.2 + index * 2.0;
+    return [x, -0.01, -69.2];
+  });  
+  const FencePositions3 = Array.from({ length: 1 }, (_, index) => {
+    const x = -62.12 + index * 2.0;
+    return [x, -0.01, -66.34];
+  });
+  const FencePositions4 = Array.from({ length: 1 }, (_, index) => {
+    const x = -62 + index * 2.0;
+    return [x, -0.01, -60.45];
+  });
+  const FencePositions5 = Array.from({ length: 1 }, (_, index) => {
+    const x = -61.88 + index * 2.0;
+    return [x, -0.01, -54.57];
+  });
+ 
   for (let i = 0; i < squareSize; i++) {
     for (let j = 0; j < squareSize; j++) {
       const x = startCoord[0] + i * spacing;
@@ -83,8 +111,16 @@ export default function Game() {
   return (
     <>
       <ToggleDebug>
+        <Shiba/> 
+        <Fence positions={FencePositions1} rotation={-20.40} args={[0.4, 1, 5.6]}/>
+        <Fence positions={FencePositions2}rotation={0} args={[5.6, 1, 0.4]}/>
+        <Fence positions={FencePositions3}rotation={-20.40} args={[0.4, 1, 5.6]}/>
+        <Fence positions={FencePositions4}rotation={-20.40} args={[0.4, 1, 5.6]}/>
+        <Fence positions={FencePositions5}rotation={-20.40} args={[0.4, 1, 5.6]}/>
         <Farm position={[-71, -0.09, -65]}/>
+        <Crops positions={CropsPositions1}/> 
         <House positions={HousePosition} rotation={Math.random()}/>
+        <TownCenterSimpleRoc/>
         <Mountain positions={MountainPositions1} rotation={Math.random()} scale={Math.random() * (50 - 28 + 1) + 28}/>
         <Mountain positions={MountainPositions2} rotation={Math.random()} scale={Math.random() * (50 - 28 + 1) + 28}/>      <Mountain positions={MountainPositions1} rotation={Math.random()} scale={Math.random() * (50 - 28 + 1) + 28}/>
         <Mountain positions={MountainPositions3} rotation={Math.random()} scale={Math.random() * (50 - 28 + 1) + 28}/>      <Mountain positions={MountainPositions1} rotation={Math.random()} scale={Math.random() * (50 - 28 + 1) + 28}/>
