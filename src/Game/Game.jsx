@@ -65,7 +65,7 @@ export default function Game() {
         <Grass positions={GrassPosition} rotation={Math.random()} />
         <Floor rotation={[-Math.PI / 2, 0, 0]} material={'ground'} />
         {/* Ambient Sound */}
-        <Track position-z={0} url="/sounds/theBirdsForest.mp3" />
+        <Track position-z={0} url="/sounds/theBirdsForest.mp3" volume={'0.019'} />
       </ToggleDebug>
     </>
   )
