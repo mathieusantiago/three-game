@@ -35,7 +35,7 @@ const Farmer = ({setDialog}) => {
             setDialog('')
             setCollide(false)
             setStartSound(false)
-          },9000)
+          },7000)
 
         }
       }
