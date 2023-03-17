@@ -68,7 +68,7 @@ export default function Game() {
         <Floor rotation={[-Math.PI / 2, 0, 0]} material={'ground'} />
         {/* Ambient Sound */}
         <Track position-z={0} url="/sounds/theBirdsForest.mp3" volume={'0.010'} />
-        <Track position-z={0} url="/sounds/medievalmusic1hour.mp3" volume={'0.010'} />
+        <Track position-z={0} url="/sounds/medievalmusic1hour.mp3" volume={'0.020'} />
       </ToggleDebug>
     </>
   )
