@@ -2,12 +2,24 @@ import { Canvas } from '@react-three/fiber'
 import { Stats, useProgress, Html, Environment } from '@react-three/drei'
 import Game from './Game/Game'
 import { Physics } from '@react-three/cannon'
-import { Suspense } from 'react'
+import { Suspense, useEffect, useState } from 'react'
+import { ProgressBar } from 'react-bootstrap'
 function Loader() {
   const { progress } = useProgress()
-  return <Html center>{progress} % loaded</Html>
-}
+  const [displayProgress, setDisplayProgress] = useState(0);
 
+  useEffect(() => {
+      setDisplayProgress(Math.round(progress * 25));
+  }, [progress]);
+
+  return(
+    <Html center>
+      <div className='barProgress'>
+        <h1 className='text-warning'>LOADING {Math.round(progress)}%</h1>
+        <ProgressBar variant="warning" label={`_________________________________________________________________Loading_________________________________________________________________`} now={Math.round(displayProgress)}/>
+      </div>
+    </Html>)
+}
 export default function App() {
   
   return (
