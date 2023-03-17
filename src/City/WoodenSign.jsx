@@ -3,7 +3,7 @@ import { Clone, useGLTF } from "@react-three/drei";
 import { useRef } from "react";
 import { CanvasTexture } from "three";
 
-const WoodenSign = ({ positions, rotation }) => {
+const WoodenSign = ({ positions, rotation,text1="", text2="", text3="" }) => {
   const glt = useGLTF("./models/WoodenSign.glb");
   const Signdref = useRef();
 
@@ -13,9 +13,9 @@ const WoodenSign = ({ positions, rotation }) => {
   textCanvas.height = 128;
   textContext.font = "bold 20px Arial";
   textContext.fillStyle = "black";
-  textContext.fillText("Maison de", 10, 40);
-  textContext.fillText("François", 20, 70);
-  textContext.fillText("le Fermier", 15, 100);
+  textContext.fillText(text1, 10, 40);
+  textContext.fillText(text2, 20, 70);
+  textContext.fillText(text3, 15, 100);
   const textTexture = new CanvasTexture(textCanvas);
 
   return (

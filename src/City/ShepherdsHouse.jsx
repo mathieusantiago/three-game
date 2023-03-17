@@ -6,12 +6,12 @@ const Obstacle = ({ position, rotation }) => {
   const a = position[0];
   const b = position[1];
   const c = position[2];
-  const glt = useGLTF("./models/House.glb");
+  const glt = useGLTF("./models/RTS-glb/ShepherdsHouse.glb");
   const housedref = useRef();
-  const args = [9, 10, 8];
+  const args = [5, 7, 4];
 
   const [ref] = useBox(
-    () => ({ args, mass: 15000, position: [a, b+6, c]}),
+    () => ({ args, position: [a+4, b+3.5, c+0.8]}),
     useRef()
   );
   return (
@@ -29,7 +29,7 @@ const Obstacle = ({ position, rotation }) => {
   );
 };
 
-export function House({ positions, rotation }) {
+export function ShepherdsHouse({ positions, rotation }) {
   return (
     <>
       {positions.map((position, index) => (

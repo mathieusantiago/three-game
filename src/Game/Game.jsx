@@ -13,9 +13,10 @@ import MountainGroup from './MountainGroup/MountainGroup'
 import FenceGroup from './FenceGroup/FenceGroup'
 import PavedGroup from './PavedGroup/PavedGroup'
 import FarmerHouseGroup from './FarmerHouseGroup/FarmerHouseGroup'
+import ShepherdsGroup from './ShepherdsGroup/ShepherdsGroup'
 
 function ToggleDebug({ children }) {
-  const debugRendererVisible = useControls('Debug Renderer', { visible: false })
+  const debugRendererVisible = useControls('Debug Renderer', { visible: true })
 
   return <>{debugRendererVisible.visible ? <Debug>{children}</Debug> : <>{children}</>}</>
 }
@@ -59,6 +60,7 @@ export default function Game() {
         <FenceGroup/>
         <PavedGroup/>
         <FarmerHouseGroup setDialog={setDialog}/>
+        <ShepherdsGroup/>
         {/* Player Hero */}
         <Player position={[0, 1, 0]} linearDamping={0.95} material={'slippery'} />
         {/* Floor */}
