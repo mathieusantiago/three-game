@@ -3,6 +3,7 @@ import Floor from '../Floor/Floor'
 // import Obstacles from './Obstacles'
 import Player from '../Player/Player'
 import { useControls } from 'leva'
+import { GrassYellowing } from '../Floor/GrassYellowing'
 import { Grass } from '../Floor/Grass'
 import { Track } from '../Sound/AmbientSound'
 import TownCenterSimpleRoc from '../City/TownCenterSimpleRoc'
@@ -14,6 +15,7 @@ import FenceGroup from './FenceGroup/FenceGroup'
 import PavedGroup from './PavedGroup/PavedGroup'
 import FarmerHouseGroup from './FarmerHouseGroup/FarmerHouseGroup'
 import ShepherdsGroup from './ShepherdsGroup/ShepherdsGroup'
+import GrassYellowingGroup from './GrassYellowingGroup/GrassYellowingGroup'
 
 function ToggleDebug({ children }) {
   const debugRendererVisible = useControls('Debug Renderer', { visible: false })
@@ -36,6 +38,10 @@ export default function Game() {
   const startCoord = [-240, 0.001, -240];
   const spacing = 46.68;
   const GrassPosition = [];
+  const GrassYellowingPosition = Array.from({ length: 10 }, (_, index) => {
+    const x = -67 + index * 1.5;
+    return [-45, 0, x];
+  });
 
   for (let i = 0; i < squareSize; i++) {
     for (let j = 0; j < squareSize; j++) {
@@ -64,6 +70,7 @@ export default function Game() {
         {/* Player Hero */}
         <Player position={[0, 1, 0]} linearDamping={0.95} material={'slippery'} />
         {/* Floor */}
+        <GrassYellowingGroup/>
         <Grass positions={GrassPosition} rotation={Math.random()} />
         <Floor rotation={[-Math.PI / 2, 0, 0]} material={'ground'} />
         {/* Ambient Sound */}
