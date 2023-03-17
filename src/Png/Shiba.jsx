@@ -7,7 +7,7 @@ const Shiba = () => {
     const ref = useRef()
     const glt = useGLTF('./models/Shiba.glb')
     const animations = useAnimations(glt.animations, glt.scene);
-    const [axeY, setAxeY] = useState(-69)
+    const [axeY, setAxeY] = useState(-64)
     const [startForward, setStartForward] = useState(true)
 
     useEffect(() => {
@@ -28,8 +28,8 @@ const Shiba = () => {
           setTimeout(loopActions, actionDuration);
         }, actionDuration);
         counter++;
-        if(counter === 4){
-          setAxeY(-69)
+        if(counter === 3){
+          setAxeY(-64)
           counter = 0
         }
       }
@@ -37,7 +37,6 @@ const Shiba = () => {
     }, [])
     const [body, api]  =useCompoundBody(
       () => ({
-        mass: 5000,
         shapes: [
           { args: [0.4], position: [0, 0, 0], type: 'Sphere' },
           { args: [0.2], position: [0, 0.5, 0], type: 'Sphere' },

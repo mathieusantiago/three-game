@@ -16,7 +16,7 @@ import FarmerHouseGroup from './FarmerHouseGroup/FarmerHouseGroup'
 import ShepherdsGroup from './ShepherdsGroup/ShepherdsGroup'
 
 function ToggleDebug({ children }) {
-  const debugRendererVisible = useControls('Debug Renderer', { visible: true })
+  const debugRendererVisible = useControls('Debug Renderer', { visible: false })
 
   return <>{debugRendererVisible.visible ? <Debug>{children}</Debug> : <>{children}</>}</>
 }
@@ -60,14 +60,15 @@ export default function Game() {
         <FenceGroup/>
         <PavedGroup/>
         <FarmerHouseGroup setDialog={setDialog}/>
-        <ShepherdsGroup/>
+        <ShepherdsGroup setDialog={setDialog}/>
         {/* Player Hero */}
         <Player position={[0, 1, 0]} linearDamping={0.95} material={'slippery'} />
         {/* Floor */}
         <Grass positions={GrassPosition} rotation={Math.random()} />
         <Floor rotation={[-Math.PI / 2, 0, 0]} material={'ground'} />
         {/* Ambient Sound */}
-        <Track position-z={0} url="/sounds/theBirdsForest.mp3" volume={'0.019'} />
+        <Track position-z={0} url="/sounds/theBirdsForest.mp3" volume={'0.010'} />
+        <Track position-z={0} url="/sounds/medievalmusic1hour.mp3" volume={'0.010'} />
       </ToggleDebug>
     </>
   )

@@ -9,7 +9,7 @@ function Loader() {
   const [displayProgress, setDisplayProgress] = useState(0);
 
   useEffect(() => {
-      setDisplayProgress(Math.round(progress * 25));
+      setDisplayProgress(Math.round(progress * 15));
   }, [progress]);
 
   return(
