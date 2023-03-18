@@ -28,12 +28,12 @@ const GrassYellowingGroup = () => {
     });
     return (
         <>
-            <GrassYellowing positions={GrassYellowingPosition1} rotation={Math.random()}/>
+            {/* <GrassYellowing positions={GrassYellowingPosition1} rotation={Math.random()}/>
             <GrassYellowing positions={GrassYellowingPosition2} rotation={Math.random()}/>
             <GrassYellowing positions={GrassYellowingPosition3} rotation={Math.random()}/>
             <GrassYellowing positions={GrassYellowingPosition4} rotation={Math.random()}/>
             <GrassYellowing positions={GrassYellowingPosition5} rotation={Math.random()}/>
-            <GrassYellowing positions={GrassYellowingPosition6} rotation={Math.random()}/>
+            <GrassYellowing positions={GrassYellowingPosition6} rotation={Math.random()}/> */}
         </>
     );
 };
