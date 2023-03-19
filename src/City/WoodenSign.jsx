@@ -39,7 +39,7 @@ const WoodenSign = ({ positions, rotation,text1="", text2="", text3="" }) => {
             >
               <meshStandardMaterial attach="material" />
             </Clone>
-            <mesh position={[0.6, 1.2, 0]}>
+            <mesh position={[0.6, 1.2, 0]} castShadow >
               <planeBufferGeometry args={[2, 0.5]} />
               <meshBasicMaterial map={textTexture} transparent={true} />
             </mesh>

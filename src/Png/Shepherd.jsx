@@ -63,7 +63,7 @@ const Shepherd = ({setDialog}) => {
             <primitive object={glt.scene}/>
         </group>
       </group>
-      <mesh>
+      <mesh castShadow >
         {startSound?(
           <Track position-z={0} loop={true} volume={0.319} url="/sounds/nananana.mp3" />
         ):""}

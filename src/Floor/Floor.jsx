@@ -7,7 +7,7 @@ export default function Floor(props) {
   const [ref] = usePlane(() => ({ ...props }), useRef())
 
   return (
-    <mesh ref={ref} receiveShadow>
+    <mesh ref={ref} receiveShadow >
       <planeGeometry args={[480, 480]} />
       <meshStandardMaterial />
     </mesh>

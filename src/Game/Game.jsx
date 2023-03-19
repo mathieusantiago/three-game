@@ -18,7 +18,7 @@ import ShepherdsGroup from './ShepherdsGroup/ShepherdsGroup'
 import GrassYellowingGroup from './GrassYellowingGroup/GrassYellowingGroup'
 
 function ToggleDebug({ children }) {
-  const debugRendererVisible = useControls('Debug Renderer', { visible: false })
+  const debugRendererVisible = useControls('Debug Renderer', { visible: true })
 
   return <>{debugRendererVisible.visible ? <Debug>{children}</Debug> : <>{children}</>}</>
 }

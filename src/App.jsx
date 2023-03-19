@@ -29,8 +29,8 @@ export default function App() {
           <Environment
           files={process.env.PUBLIC_URL + "/img/sky2.hdr"}
           background={"both"}/>
-          <spotLight position={[80, 5, 150]} angle={Math.PI / 3} penumbra={1} castShadow shadow-mapSize-height={2048} shadow-mapSize-width={2048} />
-          <spotLight position={[-80, 5, 150]} angle={Math.PI / 3} penumbra={1} castShadow shadow-mapSize-height={2048} shadow-mapSize-width={2048} />
+          <spotLight position={[80, 30, 150]} angle={Math.PI / 2} penumbra={10} castShadow shadow-mapSize-height={2048} shadow-mapSize-width={2048} />
+          <spotLight position={[-80, 30, 150]} angle={Math.PI / 2} penumbra={10} castShadow shadow-mapSize-height={2048} shadow-mapSize-width={2048} />
           <Physics>
             <Game/>
           </Physics>
