@@ -58,12 +58,12 @@ const Farmer = ({setDialog}) => {
     })
     return (
       <>
-      <group ref={ref} dispose={null} position={[-70,0,-45]}>
+      <group ref={ref} dispose={null} position={[-70,0,-45]} castShadow>
         <group name="Scene" >
             <primitive object={glt.scene}/>
         </group>
       </group>
-      <mesh castShadow >
+      <mesh>
         {startSound?(
           <Track position-z={0} loop={true} volume={0.319} url="/sounds/tchatcha.mp3" />
         ):""}

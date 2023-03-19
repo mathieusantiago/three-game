@@ -3,7 +3,7 @@ import { Object3D } from "three"
 import { suspend } from 'suspend-react'
 import { useFrame } from "@react-three/fiber"
 
-async function createAudio(url, volume = 0.019, loop = true) {
+async function createAudio(url, volume = 0.019, loop = true, playbackRate) {
     
     const res = await fetch(url)
     const buffer = await res.arrayBuffer()
@@ -21,7 +21,7 @@ async function createAudio(url, volume = 0.019, loop = true) {
     source.connect(analyser)
     gain.gain.value = volume //0.019
     analyser.connect(gain)
-    
+    source.playbackRate.value = playbackRate
     const data = new Uint8Array(analyser.frequencyBinCount)
     
     return {
@@ -37,9 +37,9 @@ async function createAudio(url, volume = 0.019, loop = true) {
   }
 
   
-export function Track({ url, y = 2500, volume,loop, space = 1.8, width = 0.01, height = 0.05, obj = new Object3D(), ...props }) {
+export function Track({ url, y = 2500,playbackRate =1, volume,loop, space = 1.8, width = 0.01, height = 0.05, obj = new Object3D(), ...props }) {
     const ref = useRef()
-    const { gain, context, update, data } = suspend(() => createAudio(url, volume, loop), [url])
+    const { gain, context, update, data } = suspend(() => createAudio(url, volume, loop, playbackRate), [url])
     
     useEffect(() => {
       gain.connect(context.destination)
