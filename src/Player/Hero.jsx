@@ -20,7 +20,7 @@ export default function Hero({ mixer, actions, useAnim }) {
         setStartSound(true)
       } else {
         const action = animations.actions["CharacterArmature|Run"];
-        action.reset().fadeOut(1).play();
+        action.reset().fadeOut(1.5).play();
         setStartSound(false)
       }
   })

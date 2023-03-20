@@ -16,6 +16,7 @@ import PavedGroup from './PavedGroup/PavedGroup'
 import FarmerHouseGroup from './FarmerHouseGroup/FarmerHouseGroup'
 import ShepherdsGroup from './ShepherdsGroup/ShepherdsGroup'
 import GrassYellowingGroup from './GrassYellowingGroup/GrassYellowingGroup'
+import LumberJackGroup from './LumberJackGroup/LumberJackGroup'
 
 function ToggleDebug({ children }) {
   const debugRendererVisible = useControls('Debug Renderer', { visible: false })
@@ -59,7 +60,7 @@ export default function Game() {
         <Html>
           {Dialog}
         </Html>
-        {/* Farmer hous group */}
+        {/* City group */}
         <TownCenterSimpleRoc/>
         <TreeGroup/>
         <MountainGroup/>
@@ -67,6 +68,7 @@ export default function Game() {
         <PavedGroup/>
         <FarmerHouseGroup setDialog={setDialog}/>
         <ShepherdsGroup setDialog={setDialog}/>
+        <LumberJackGroup/>
         {/* Player Hero */}
         <Player position={[0, 1, 0]} linearDamping={0.95} material={'slippery'} />
         {/* Floor */}
