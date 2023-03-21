@@ -15,6 +15,7 @@ import PavedGroup from './PavedGroup/PavedGroup'
 import FarmerHouseGroup from './FarmerHouseGroup/FarmerHouseGroup'
 import ShepherdsGroup from './ShepherdsGroup/ShepherdsGroup'
 import LumberJackGroup from './LumberJackGroup/LumberJackGroup'
+import WellGroup from './WellGroup/WellGroup'
 
 function ToggleDebug({ children }) {
   const debugRendererVisible = useControls('Debug Renderer', { visible: true })
@@ -60,6 +61,7 @@ export default function Game() {
         <MountainGroup/>
         <FenceGroup/>
         <PavedGroup/>
+        <WellGroup/>
         <FarmerHouseGroup setDialog={setDialog}/>
         <ShepherdsGroup setDialog={setDialog}/>
         <LumberJackGroup setDialog={setDialog}/>
