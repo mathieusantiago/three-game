@@ -19,7 +19,7 @@ import GrassYellowingGroup from './GrassYellowingGroup/GrassYellowingGroup'
 import LumberJackGroup from './LumberJackGroup/LumberJackGroup'
 
 function ToggleDebug({ children }) {
-  const debugRendererVisible = useControls('Debug Renderer', { visible: false })
+  const debugRendererVisible = useControls('Debug Renderer', { visible: true })
 
   return <>{debugRendererVisible.visible ? <Debug>{children}</Debug> : <>{children}</>}</>
 }
@@ -68,7 +68,7 @@ export default function Game() {
         <PavedGroup/>
         <FarmerHouseGroup setDialog={setDialog}/>
         <ShepherdsGroup setDialog={setDialog}/>
-        <LumberJackGroup/>
+        <LumberJackGroup setDialog={setDialog}/>
         {/* Player Hero */}
         <Player position={[0, 1, 0]} linearDamping={0.95} material={'slippery'} />
         {/* Floor */}

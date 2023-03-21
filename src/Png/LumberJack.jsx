@@ -5,9 +5,9 @@ import React, { useEffect, useRef, useState } from 'react';
 import { UseTypeWriter } from '../Controle/UseTypeWriter';
 import { Track } from '../Sound/AmbientSound';
 
-const Farmer = ({setDialog}) => {
+const LumberJack = ({setDialog}) => {
     const ref = useRef()
-    const glt = useGLTF('./models/Farmer.glb')
+    const glt = useGLTF('./models/LumberJack.glb')
     const animations = useAnimations(glt.animations, glt.scene);
     const [collide, setCollide] = useState(false)
     const [startSound, setStartSound] = useState(false)
@@ -27,7 +27,7 @@ const Farmer = ({setDialog}) => {
             <div className="dalogHtml">
               <img src="/img/dialogWood.png" className="imageDialog" />
               <div className="dialog">
-                <UseTypeWriter text="Bonjour, je suis Aldric le fermier de la ville du Boisclair, je suis là pour vous aider." />
+                <UseTypeWriter text="Bonjour, je suis Gwen la bucheronne de la ville du Boisclair, je suis là pour vous aider." />
               </div>
             </div>
           )
@@ -54,18 +54,18 @@ const Farmer = ({setDialog}) => {
       useRef()
     )
     useFrame((_, delta) => {
-      api.position.set(-70,0,-45);
+      api.position.set(80.5,0,-40);
     })
     return (
       <>
-      <group ref={ref} dispose={null} position={[-70,0,-45]} castShadow>
+      <group ref={ref} dispose={null} position={[80.5,0,-40]} castShadow>
         <group name="Scene" >
             <primitive object={glt.scene}/>
         </group>
       </group>
       <mesh>
         {startSound?(
-          <Track position-z={0} loop={true} volume={0.319} url="/sounds/tchatcha.mp3" />
+          <Track position-z={0} loop={true} volume={0.319} url="/sounds/LumberJack.mp3" />
         ):""}
         
       </mesh>
@@ -74,4 +74,4 @@ const Farmer = ({setDialog}) => {
     )
 };
 
-export default Farmer;
+export default LumberJack;

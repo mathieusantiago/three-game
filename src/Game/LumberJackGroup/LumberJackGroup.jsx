@@ -4,8 +4,9 @@ import PineTreeCute from '../../City/PineTreeCute';
 import SawmillSaw from '../../City/SawmillSaw';
 import { StorageShed } from '../../City/StorageShed';
 import WoodPile from '../../City/WoodPile';
+import LumberJack from '../../Png/LumberJack';
 
-const LumberJackGroup = () => {
+const LumberJackGroup = ({setDialog}) => {
     const pineTreePositions1 = Array.from({ length: 6 }, (_, index) => {
         const x = 25 + index * 12;
         return [x, 0, -95];
@@ -21,6 +22,7 @@ const LumberJackGroup = () => {
       const HousePosition = [[80.6, 0, -45]];
     return (
         <>
+            <LumberJack setDialog={setDialog}/>
             <SawmillSaw />
             <WoodPile />
             <StorageShed positions={HousePosition} />
