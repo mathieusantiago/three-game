@@ -29,7 +29,7 @@ const Obstacle = ({ position, rotation }) => {
   );
 };
 
-export function HouseFarm({ positions, rotation }) {
+export const HouseFarm = ({ positions, rotation }) => {
   return (
     <>
       {positions.map((position, index) => (

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export function UseTypeWriter({ text }) {
+export const UseTypeWriter = ({ text }) => {
     const [currentText, setCurrentText] = useState('');
     const [currentIndex, setCurrentIndex] = useState(0);
   

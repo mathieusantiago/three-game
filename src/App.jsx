@@ -4,7 +4,7 @@ import Game from './Game/Game'
 import { Physics } from '@react-three/cannon'
 import { Suspense, useEffect, useState } from 'react'
 import { ProgressBar } from 'react-bootstrap'
-function Loader() {
+const Loader = () => {
   const { progress } = useProgress()
   const [displayProgress, setDisplayProgress] = useState(0);
 
@@ -20,7 +20,7 @@ function Loader() {
       </div>
     </Html>)
 }
-export default function App() {
+const App = () => {
   
   return (
     <>
@@ -45,3 +45,4 @@ export default function App() {
     </>
   )
 }
+export default App;

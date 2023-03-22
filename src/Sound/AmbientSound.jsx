@@ -3,7 +3,7 @@ import { Object3D } from "three"
 import { suspend } from 'suspend-react'
 import { useFrame } from "@react-three/fiber"
 
-async function createAudio(url, volume = 0.019, loop = true, playbackRate) {
+const createAudio = async(url, volume = 0.019, loop = true, playbackRate)=> {
     
     const res = await fetch(url)
     const buffer = await res.arrayBuffer()
@@ -37,7 +37,7 @@ async function createAudio(url, volume = 0.019, loop = true, playbackRate) {
   }
 
   
-export function Track({ url, y = 2500,playbackRate =1, volume,loop, space = 1.8, width = 0.01, height = 0.05, obj = new Object3D(), ...props }) {
+export const Track = ({ url, y = 2500,playbackRate =1, volume,loop, space = 1.8, width = 0.01, height = 0.05, obj = new Object3D(), ...props }) =>{
     const ref = useRef()
     const { gain, context, update, data } = suspend(() => createAudio(url, volume, loop, playbackRate), [url])
     

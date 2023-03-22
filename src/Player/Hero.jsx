@@ -3,7 +3,7 @@ import { useAnimations, useGLTF } from '@react-three/drei'
 import { useEffect } from 'react'
 import { Track } from '../Sound/AmbientSound'
 
-export default function Hero({ mixer, actions, useAnim }) {
+const Hero = ({ mixer, actions, useAnim }) => {
   const ref = useRef()
   const glt = useGLTF('./models/Hero.glb')
   const animations = useAnimations(glt.animations, glt.scene);
@@ -42,4 +42,5 @@ export default function Hero({ mixer, actions, useAnim }) {
   )
 }
 
+export default Hero
 useGLTF.preload(['./models/eve.glb'])

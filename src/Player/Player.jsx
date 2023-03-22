@@ -7,7 +7,7 @@ import { useFrame } from '@react-three/fiber'
 import { Vec3 } from 'cannon-es'
 import useFollowCam from '../Controle/useFollowCam'
 
-export default function PlayerCollider(props) {
+const PlayerCollider = (props)=> {
   const { pivot } = useFollowCam()
   const group = useRef()
   const velocity = useMemo(() => new Vector3(), [])
@@ -94,3 +94,4 @@ export default function PlayerCollider(props) {
     </>
   )
 }
+export default PlayerCollider

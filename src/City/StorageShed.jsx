@@ -29,7 +29,7 @@ const Obstacle = ({ position, rotation }) => {
   );
 };
 
-export function StorageShed({ positions, rotation }) {
+export const StorageShed = ({ positions, rotation }) => {
   return (
     <>
       {positions.map((position, index) => (

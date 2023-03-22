@@ -4,8 +4,8 @@ import Well from '../../City/Well';
 const WellGroup = () => {
     return (
         <>
-            <Well position={[95, 0.6, -20]} rotation={0}/>
-            <Well position={[-55, 0.6, -50]}rotation={1.5}/>
+            <Well position={[95.5, 0.6, -20]} rotation={0}/>
+            <Well position={[-54.9, 0.6, -47.9]}rotation={1.5}/>
         </>
     );
 };

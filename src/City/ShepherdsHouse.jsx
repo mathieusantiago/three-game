@@ -29,7 +29,7 @@ const Obstacle = ({ position, rotation }) => {
   );
 };
 
-export function ShepherdsHouse({ positions, rotation }) {
+export const ShepherdsHouse = ({ positions, rotation }) => {
   return (
     <>
       {positions.map((position, index) => (

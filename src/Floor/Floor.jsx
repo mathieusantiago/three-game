@@ -3,7 +3,7 @@ import { usePlane } from '@react-three/cannon'
 import { useLoader } from '@react-three/fiber'
 import { TextureLoader } from 'three'
 
-export default function Floor(props) {
+const Floor = (props) => {
   const [ref] = usePlane(() => ({ ...props }), useRef())
 
   return (
@@ -13,3 +13,4 @@ export default function Floor(props) {
     </mesh>
   )
 }
+export default Floor

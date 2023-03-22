@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 
-export default function useKeyboard() {
+const useKeyboard = () => {
   const keyMap = useRef({})
 
   useEffect(() => {
@@ -17,3 +17,4 @@ export default function useKeyboard() {
 
   return keyMap.current
 }
+export default useKeyboard

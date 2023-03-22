@@ -4,7 +4,7 @@ import "./styles.css";
 import App from "./App";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Cover from "./Cover/Cover";
-function Overlay() {
+const Overlay = () => {
   const [ready, setReady] = useState(false);
   return (
     <>

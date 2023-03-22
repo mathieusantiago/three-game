@@ -17,13 +17,13 @@ import ShepherdsGroup from './ShepherdsGroup/ShepherdsGroup'
 import LumberJackGroup from './LumberJackGroup/LumberJackGroup'
 import WellGroup from './WellGroup/WellGroup'
 
-function ToggleDebug({ children }) {
-  const debugRendererVisible = useControls('Debug Renderer', { visible: true })
+const ToggleDebug = ({ children }) =>{
+  const debugRendererVisible = useControls('Debug Renderer', { visible: false })
 
   return <>{debugRendererVisible.visible ? <Debug>{children}</Debug> : <>{children}</>}</>
 }
 
-export default function Game() {
+const Game = () => {
 
   const [Dialog, setDialog] = useState(<div></div>)
 
@@ -77,3 +77,4 @@ export default function Game() {
     </>
   )
 }
+export default Game
