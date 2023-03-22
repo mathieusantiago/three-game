@@ -3,6 +3,7 @@ import PineTree from '../../City/PineTree';
 import PineTreeCute from '../../City/PineTreeCute';
 import SawmillSaw from '../../City/SawmillSaw';
 import { StorageShed } from '../../City/StorageShed';
+import WoodenSign from '../../City/WoodenSign';
 import WoodPile from '../../City/WoodPile';
 import LumberJack from '../../Png/LumberJack';
 
@@ -22,6 +23,7 @@ const LumberJackGroup = ({setDialog}) => {
       const HousePosition = [[80.6, 0, -45]];
     return (
         <>
+            <WoodenSign positions={[[78, 0, -40.5]]} rotation={0} text1="Maison " text2="Gwen" text3="bucheron"/>
             <LumberJack setDialog={setDialog}/>
             <SawmillSaw />
             <WoodPile />

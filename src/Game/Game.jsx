@@ -18,7 +18,7 @@ import LumberJackGroup from './LumberJackGroup/LumberJackGroup'
 import WellGroup from './WellGroup/WellGroup'
 
 function ToggleDebug({ children }) {
-  const debugRendererVisible = useControls('Debug Renderer', { visible: true })
+  const debugRendererVisible = useControls('Debug Renderer', { visible: false })
 
   return <>{debugRendererVisible.visible ? <Debug>{children}</Debug> : <>{children}</>}</>
 }
