@@ -25,7 +25,7 @@ export const MarketStallsCorner = ({ position, rotation }) => {
   );
   return (
     <>
-      <Clone ref={cropsDref} scale={5} object={glt.scene} position={position}>
+      <Clone ref={cropsDref} scale={5} object={glt.scene} rotation-y={rotation} position={position}>
         <meshStandardMaterial attach="material" />
       </Clone>
     </>

@@ -68,7 +68,7 @@ const Game = () => {
         <ShepherdsGroup setDialog={setDialog}/>
         <LumberJackGroup setDialog={setDialog}/>
         {/* Player Hero */}
-        <Player position={[0, 1, 0]} linearDamping={0.95} material={'slippery'} />
+        <Player position={[10, 1, 10]} linearDamping={0.95} material={'slippery'} />
         {/* Floor */}
         <Grass positions={GrassPosition} rotation={Math.random()} />
         <Floor rotation={[-Math.PI / 2, 0, 0]} material={'ground'} />
