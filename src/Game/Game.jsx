@@ -16,9 +16,10 @@ import FarmerHouseGroup from './FarmerHouseGroup/FarmerHouseGroup'
 import ShepherdsGroup from './ShepherdsGroup/ShepherdsGroup'
 import LumberJackGroup from './LumberJackGroup/LumberJackGroup'
 import WellGroup from './WellGroup/WellGroup'
+import MarketPlaceGroup from './MarketPlaceGroup/MarketPlaceGroup'
 
 const ToggleDebug = ({ children }) =>{
-  const debugRendererVisible = useControls('Debug Renderer', { visible: false })
+  const debugRendererVisible = useControls('Debug Renderer', { visible: true })
 
   return <>{debugRendererVisible.visible ? <Debug>{children}</Debug> : <>{children}</>}</>
 }
@@ -62,6 +63,7 @@ const Game = () => {
         <FenceGroup/>
         <PavedGroup/>
         <WellGroup/>
+        <MarketPlaceGroup/>
         <FarmerHouseGroup setDialog={setDialog}/>
         <ShepherdsGroup setDialog={setDialog}/>
         <LumberJackGroup setDialog={setDialog}/>
