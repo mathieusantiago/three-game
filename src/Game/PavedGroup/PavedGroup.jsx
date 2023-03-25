@@ -114,6 +114,11 @@ const PavedGroup = () => {
       const x = -8.5 + index * 2.0;
       return [x, -0.09, 10.5];
     });
+
+    const DirtXPositions23 = Array.from({ length: 9 }, (_, index) => {
+      const x = -51.01 + index * 2.0;
+      return [1.2, -0.09, x];
+    });
     return (
         <>
             <Dirt positions={DirtXPositions1}/>
@@ -132,6 +137,9 @@ const PavedGroup = () => {
             <Dirt positions={DirtYPositions8}/>
             <Dirt positions={DirtYPositions9}/>
             <Dirt positions={DirtYPositions10}/>
+
+            <Dirt positions={DirtXPositions23}/>
+
             {/* marquet place */}
             <Dirt positions={DirtXPositions11}/>
             <Dirt positions={DirtYPositions12}/>

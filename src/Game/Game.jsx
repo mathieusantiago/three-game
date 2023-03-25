@@ -17,6 +17,7 @@ import ShepherdsGroup from './ShepherdsGroup/ShepherdsGroup'
 import LumberJackGroup from './LumberJackGroup/LumberJackGroup'
 import WellGroup from './WellGroup/WellGroup'
 import MarketPlaceGroup from './MarketPlaceGroup/MarketPlaceGroup'
+import HouseVilage1Group from './HouseVilage1Group/HouseVilage1Group'
 
 const ToggleDebug = ({ children }) =>{
   const debugRendererVisible = useControls('Debug Renderer', { visible: true })
@@ -57,6 +58,7 @@ const Game = () => {
           {Dialog}
         </Html>
         {/* City group */}
+        <HouseVilage1Group/>
         <TownCenterSimpleRoc/>
         <TreeGroup/>
         <MountainGroup/>
