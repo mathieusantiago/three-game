@@ -65,7 +65,7 @@ const PavedGroup = () => {
 
     const DirtXPositions11 = Array.from({ length: 15 }, (_, index) => {
       const x = -33 + index * 2.0;
-      return [5, -0.09, x];
+      return [5.5, -0.09, x];
     });
 
     const DirtYPositions12 = Array.from({ length: 15 }, (_, index) => {
