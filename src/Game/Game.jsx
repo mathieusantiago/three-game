@@ -20,7 +20,7 @@ import MarketPlaceGroup from './MarketPlaceGroup/MarketPlaceGroup'
 import HouseVilage1Group from './HouseVilage1Group/HouseVilage1Group'
 
 const ToggleDebug = ({ children }) =>{
-  const debugRendererVisible = useControls('Debug Renderer', { visible: true })
+  const debugRendererVisible = useControls('Debug Renderer', { visible: false })
 
   return <>{debugRendererVisible.visible ? <Debug>{children}</Debug> : <>{children}</>}</>
 }

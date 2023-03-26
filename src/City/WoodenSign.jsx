@@ -3,7 +3,7 @@ import { Clone, useGLTF } from "@react-three/drei";
 import { useRef } from "react";
 import { CanvasTexture } from "three";
 
-const WoodenSign = ({ positions, rotation,text1="", text2="", text3="" }) => {
+const WoodenSign = ({ positions, textposition=[0.6, 1.2, 0], rotation,text1="", text2="", text3="" }) => {
   const glt = useGLTF("./models/WoodenSign.glb");
   const Signdref = useRef();
 
@@ -39,7 +39,7 @@ const WoodenSign = ({ positions, rotation,text1="", text2="", text3="" }) => {
             >
               <meshStandardMaterial attach="material" />
             </Clone>
-            <mesh position={[0.6, 1.2, 0]} castShadow >
+            <mesh position={textposition} castShadow rotation-y={rotation}>
               <planeBufferGeometry args={[2, 0.5]} />
               <meshBasicMaterial map={textTexture} transparent={true} />
             </mesh>
