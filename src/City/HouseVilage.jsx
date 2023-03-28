@@ -9,7 +9,6 @@ const Obstacle = ({ position, rotation, boxPosition }) => {
   const glt = useGLTF("./models/RTS-glb/HouseVilage.glb");
   const housedref = useRef();
   const args = [5, 7, 4];
-  console.log(boxPosition)
   const aB = boxPosition[0];
   const bB = boxPosition[1];
   const cB = boxPosition[2];
