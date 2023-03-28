@@ -7,67 +7,54 @@ const PavedGroup = () => {
       const x = -45 + index * 2.0;
       return [-70, -0.09, x];
     });
-
     const DirtXPositions2 = Array.from({ length: 9 }, (_, index) => {
       const x = -51.01 + index * 2.0;
       return [-13.45, -0.09, x];
     });
-
     const DirtYPositions1 = Array.from({ length: 6 }, (_, index) => {
         const x = -68 + index * 2.0;
         return [x, -0.09, -35];
     });
-
     const DirtYPositions2 = Array.from({ length: 22 }, (_, index) => {
       const x = -56 + index * 2.0;
       return [x, -0.09, -35.0];
     });
-
     const DirtYPositions3 = Array.from({ length: 46 }, (_, index) => {
       const x = -11.5 + index * 2.0;
       return [x, -0.09, -35.0];
     });
-
     const DirtXPositions4 = Array.from({ length: 12 }, (_, index) => {
       const x = -40.0 + index * 2.0;
       return [80.5, -0.09, x];
     });
-
     const DirtXPositions5 = Array.from({ length: 7 }, (_, index) => {
       const x = -48.9 + index * 2.0;
       return [-54.8, -0.09, x];
     });
-
     const DirtXPositions6 = Array.from({ length: 2 }, (_, index) => {
       const x = -48.9 + index * 2.0;
       return [-56.8, -0.09, x];
     });
-
     const DirtXPositions7 = Array.from({ length: 2 }, (_, index) => {
       const x = -48.9 + index * 2.0;
       return [-52.8, -0.09, x];
     });
-    
     const DirtYPositions8 = Array.from({ length: 8 }, (_, index) => {
       const x = 82.5 + index * 2.0;
       return [x, -0.09, -19.9];
     });
-
     const DirtYPositions9 = Array.from({ length: 2 }, (_, index) => {
       const x = 94.5 + index * 2.0;
       return [x, -0.09, -17.9];
     });
-
     const DirtYPositions10 = Array.from({ length: 2 }, (_, index) => {
       const x = 94.5 + index * 2.0;
       return [x, -0.09, -21.9];
     });
-
     const DirtXPositions11 = Array.from({ length: 15 }, (_, index) => {
       const x = -33 + index * 2.0;
       return [5.5, -0.09, x];
     });
-
     const DirtYPositions12 = Array.from({ length: 15 }, (_, index) => {
       const x = -8.5 + index * 2.0;
       return [x, -0.09, -7.5];
@@ -88,12 +75,10 @@ const PavedGroup = () => {
       const x = -8.5 + index * 2.0;
       return [x, -0.09, 0.5];
     });
-
     const DirtYPositions17 = Array.from({ length: 15 }, (_, index) => {
       const x = -8.5 + index * 2.0;
       return [x, -0.09, 2.5];
     });
-
     const DirtYPositions18 = Array.from({ length: 15 }, (_, index) => {
       const x = -8.5 + index * 2.0;
       return [x, -0.09, 2.5];
@@ -114,7 +99,6 @@ const PavedGroup = () => {
       const x = -8.5 + index * 2.0;
       return [x, -0.09, 10.5];
     });
-
     const DirtXPositions23 = Array.from({ length: 9 }, (_, index) => {
       const x = -51.01 + index * 2.0;
       return [1.2, -0.09, x];
@@ -123,6 +107,7 @@ const PavedGroup = () => {
       const x = 12.5 + index * 2.0;
       return [5.5, -0.09, x];
     });
+
     return (
         <>
             <Dirt positions={DirtXPositions1}/>
@@ -142,7 +127,6 @@ const PavedGroup = () => {
             <Dirt positions={DirtYPositions9}/>
             <Dirt positions={DirtYPositions10}/>
 
-            <Dirt positions={DirtXPositions23}/>
 
             {/* marquet place */}
             <Dirt positions={DirtXPositions11}/>
@@ -158,6 +142,7 @@ const PavedGroup = () => {
             <Dirt positions={DirtYPositions21}/>
             <Dirt positions={DirtYPositions22}/>
 
+            <Dirt positions={DirtXPositions23}/>
             <Dirt positions={DirtXPositions24}/>
 
 
