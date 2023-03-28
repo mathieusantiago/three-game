@@ -107,7 +107,22 @@ const PavedGroup = () => {
       const x = 12.5 + index * 2.0;
       return [5.5, -0.09, x];
     });
-
+    const DirtXPositions25 = Array.from({ length: 6 }, (_, index) => {
+      const x = -33 + index * 2.0;
+      return [-70, -0.09, x];
+    });
+    const DirtXPositions26 = Array.from({ length: 6 }, (_, index) => {
+      const x = -33 + index * 2.0;
+      return [-49.25, -0.09, x];
+    });
+    const DirtXPositions27 = Array.from({ length: 6 }, (_, index) => {
+      const x = -33 + index * 2.0;
+      return [-29.25, -0.09, x];
+    });
+    const DirtXPositions28 = Array.from({ length: 6 }, (_, index) => {
+      const x = -33 + index * 2.0;
+      return [-9.25, -0.09, x];
+    });
     return (
         <>
             <Dirt positions={DirtXPositions1}/>
@@ -120,13 +135,12 @@ const PavedGroup = () => {
             <Dirt positions={DirtXPositions4}/>
 
             <Dirt positions={DirtXPositions5}/>
-            <Dirt positions={DirtXPositions6}/>
+            <Dirt positions={DirtXPositions6}/>  
             <Dirt positions={DirtXPositions7}/>
 
             <Dirt positions={DirtYPositions8}/>
             <Dirt positions={DirtYPositions9}/>
             <Dirt positions={DirtYPositions10}/>
-
 
             {/* marquet place */}
             <Dirt positions={DirtXPositions11}/>
@@ -145,6 +159,10 @@ const PavedGroup = () => {
             <Dirt positions={DirtXPositions23}/>
             <Dirt positions={DirtXPositions24}/>
 
+            <Dirt positions={DirtXPositions25}/>
+            <Dirt positions={DirtXPositions26}/>
+            <Dirt positions={DirtXPositions27}/>
+            <Dirt positions={DirtXPositions28}/>
 
 
         </>
