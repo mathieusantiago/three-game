@@ -38,7 +38,7 @@ const App = () => {
         </Suspense>
       </Canvas>
       <div id="instructions">
-        WASD to move
+        W,A,S,D to move
         <br />
         Mouve mouse to look around
       </div>
